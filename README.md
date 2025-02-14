@@ -2,4 +2,4 @@
 
 This is the repo for the website Climber's Guild.
 
-Visit it [here](www.climbersguild.com)!
+Visit it [here](https://www.climbersguild.com)!

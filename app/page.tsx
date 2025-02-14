@@ -2,16 +2,16 @@ import Link from 'next/link';
 
 export default function UnderConstruction() {
   return (
-    <html>
-      <body>
     <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 flex flex-col items-center justify-center text-center p-8">
       <div className="space-y-8 max-w-2xl">
-        <h1 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
-          Climbing Community Coming Soon!
-        </h1>
-        
+      <h1 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-blue-500 leading-tight pb-3">
+        Climbing Community <br />
+        Coming Soon!
+      </h1>
+
+      
         <p className="text-lg md:text-xl text-slate-300 mb-8">
-          We're building the ultimate platform for climbers to share and discover routes. 
+          We are building the ultimate platform for climbers to share and discover routes. 
           Join our waitlist to get early access!
         </p>
 
@@ -29,7 +29,5 @@ export default function UnderConstruction() {
         </p>
       </div>
     </div>
-    </body>
-    </html>
   );
 }

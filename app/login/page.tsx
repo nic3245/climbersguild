@@ -1,4 +1,4 @@
-import { login } from './actions'
+import { login } from './login_action'
 
 export default function LoginPage() {
   return (

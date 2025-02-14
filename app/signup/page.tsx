@@ -73,10 +73,10 @@ export default function LoginPage() {
 
   return (
 
-
-    <section className="bg-gray-50 dark:bg-gray-900">
+// flex flex-col items-center justify-center text-center p-8
+    <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800"> 
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-          <a href="#" className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+          <a href="/" className="flex items-center mb-6 text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-b from-orange-100 to-orange-500">
               <img className="w-8 h-8 mr-2" src="favicon.ico" alt="logo"></img>
               Climber&apos;s Guild    
           </a>
@@ -124,7 +124,7 @@ export default function LoginPage() {
                       {termsError && (
                             <p className="mt-2 text-sm text-red-600 dark:text-red-500">{termsError}</p>
                           )}
-                      <button type="submit" className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Create an account</button>
+                      <button type="submit" className="w-full text-white bg-orange-500 rounded-lg hover:bg-orange-600 transition-colors duration-300 transform hover:scale-105 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Create an account</button>
                       <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                           Already have an account? <a href="/login" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Login here</a>
                       </p>
@@ -132,6 +132,6 @@ export default function LoginPage() {
               </div>
           </div>
       </div>
-    </section>
+    </div>
   )
 }

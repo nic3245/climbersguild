@@ -4,7 +4,7 @@ export default function UnderConstruction() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 flex flex-col items-center justify-center text-center p-8">
       <div className="space-y-8 max-w-2xl">
-      <h1 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-blue-500 leading-tight pb-3">
+      <h1 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-orange-300 to-orange-600 leading-tight pb-3">
         Climbing Community <br />
         Coming Soon!
       </h1>

@@ -78,7 +78,7 @@ export default function LoginPage() {
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
           <a href="#" className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
               <img className="w-8 h-8 mr-2" src="favicon.ico" alt="logo"></img>
-              Climber's Guild    
+              Climber&apos;s Guild    
           </a>
           <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
               <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
@@ -113,9 +113,7 @@ export default function LoginPage() {
                       <div className="flex items-start">
                           <div className="flex items-center h-5">
                             <input id="terms" aria-describedby="terms" type="checkbox" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required
-                            onChange={(e) => {
-                              
-                            }}>
+                            >
                       </input>
                           </div>
                           <div className="ml-3 text-sm">

@@ -79,7 +79,7 @@ export default function LoginPage() {
     <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800"> 
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
           <Link href="/" className="flex items-center mb-6 text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-b from-orange-100 to-orange-500">
-              <Image className="w-8 h-8 mr-2" src="favicon.ico" alt="logo"></Image>
+              <Image className="w-8 h-8 mr-2" src="/favicon.ico" alt="logo" width={32} height={32}></Image>
               Climber&apos;s Guild    
           </Link>
           <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">

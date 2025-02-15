@@ -4,8 +4,10 @@ import { useEffect, useState } from 'react'
 import { createClient } from '@/utils/supabase/client'
 import Link from 'next/link'
 
+import { User } from '@supabase/supabase-js'
+
 export default function NavBar() {
-  const [user, setUser] = useState<any>(null)
+  const [user, setUser] = useState<null | User>(null)
   const supabase = createClient()
 
   useEffect(() => {
@@ -21,7 +23,7 @@ export default function NavBar() {
     })
 
     return () => subscription?.unsubscribe()
-  }, [])
+  })
 
   const handleSignOut = async () => {
     await supabase.auth.signOut()

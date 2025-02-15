@@ -3,14 +3,18 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { signup } from './signup_action'
 import { useState, FormEvent } from 'react'
+import { useLoading } from '@/contexts/loading-context'
 
 export default function LoginPage() {
   const [emailError, setEmailError] = useState<string | null>(null);
   const [passwordError, setPasswordError] = useState<string | null>(null)
   const [termsError, setTermsError] = useState<string | null>(null);
+  const { startLoading, stopLoading } = useLoading()
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault(); // Prevent the default form submission behavior
+    startLoading()
+try {
     const formData = new FormData(event.currentTarget); // Extract the FormData object from the event object
     const email = formData.get('email') as string | null;
     const password = formData.get('password');
@@ -51,7 +55,6 @@ export default function LoginPage() {
       return;
     }
 
-    console.log(typeof password)
 
     if (password && typeof password === 'string' && password.length < 6) {
       setPasswordError('Password must be at least 6 characters long')
@@ -72,6 +75,10 @@ export default function LoginPage() {
     setPasswordError(null)
     return await signup(formData)
   }
+  finally {
+    stopLoading();
+  }
+}
 
   return (
 

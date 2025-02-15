@@ -3,24 +3,17 @@ import { login } from './login_action'
 import { useState, FormEvent } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useLoading } from '@/contexts/loading-context'
 
-// export default function LoginPage() {
-//   return (
-//     <form>
-//       <label htmlFor="email">Email:</label>
-//       <input id="email" name="email" type="email" required />
-//       <label htmlFor="password">Password:</label>
-//       <input id="password" name="password" type="password" required />
-//       <button formAction={login}>Log in</button>
-//     </form>
-//   )
-// }
 export default function LoginPage() {
   const [emailError, setEmailError] = useState<string | null>(null);
   const [passwordError, setPasswordError] = useState<string | null>(null);
+  const { startLoading, stopLoading } = useLoading()
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    startLoading();
+    try {
     const formData = new FormData(event.currentTarget);
     const email = formData.get('email') as string | null;
     const password = formData.get('password');
@@ -59,6 +52,14 @@ export default function LoginPage() {
       }, 3000); // clear error message after 3 seconds
       return;
   }
+}
+finally {
+  stopLoading();
+  setTimeout(() => {
+    setEmailError(null)
+    setPasswordError(null)
+  }, 3000)
+}
 
   };
 
@@ -95,9 +96,9 @@ export default function LoginPage() {
                       </p>
                     )}
                     
-                    <button type="submit" className="w-full text-white bg-orange-500 rounded-lg hover:bg-orange-600 transition-colors duration-300 transform hover:scale-105 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Create an account</button>
+                    <button type="submit" className="w-full text-white bg-orange-500 rounded-lg hover:bg-orange-600 transition-colors duration-300 transform hover:scale-105 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Login</button>
                     <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                        Don&apos;t have an account? <a href="/signup" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Signup here</a>
+                        Don&apos;t have an account? <a href="/signup" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up here</a>
                     </p>
                 </form>
             </div>

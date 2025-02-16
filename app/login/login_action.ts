@@ -24,6 +24,9 @@ export async function login(formData: FormData) {
         loginError: 'Invalid credentials. Please try again.',
       }
     }
+    if (error.message.includes("Email not confirmed")) {
+      redirect('/verification')
+    }
     redirect('/error')
   }
 

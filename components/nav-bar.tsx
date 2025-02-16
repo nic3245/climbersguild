@@ -8,9 +8,12 @@ import { User } from '@supabase/supabase-js'
 
 export default function NavBar() {
   const [user, setUser] = useState<null | User>(null)
+  const [isMobile, setIsMobile] = useState(false)
   const supabase = createClient()
 
   useEffect(() => {
+    const checkMobile = () => window.matchMedia('(max-width: 768px)').matches
+    setIsMobile(checkMobile())
     const getAuthUser = async () => {
       const { data: { user } } = await supabase.auth.getUser()
       setUser(user)
@@ -29,6 +32,9 @@ export default function NavBar() {
     await supabase.auth.signOut()
     window.location.href = '/login' // Redirect to login page after sign out
   }
+
+  
+  if (isMobile) return null
 
   return (
     <nav className="absolute top-0 right-0 p-4 flex gap-4">
